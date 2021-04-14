@@ -1,0 +1,66 @@
+[System]
+Name='FISTokoBarang_123190075'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=3
+NumRules=5
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='LamaBarang'
+Range=[0 10]
+NumMFs=3
+MF1='SangatLama':'trimf',[0 0 4]
+MF2='Lama':'trimf',[3 6.5 9.5]
+MF3='BaruSaja':'trimf',[9 9 10]
+
+[Input2]
+Name='Kondisi'
+Range=[0 15]
+NumMFs=3
+MF1='Rusak':'trimf',[0 0 7.5]
+MF2='Normal':'trimf',[7.5 11.25 15]
+MF3='SangatBaik':'trimf',[10 15 15]
+
+[Input3]
+Name='Kelengkapan'
+Range=[0 10]
+NumMFs=3
+MF1='TidakAda':'trimf',[0 0 4]
+MF2='Kurang':'trimf',[3 5 6]
+MF3='Lengkap':'trimf',[6 10 10]
+
+[Output1]
+Name='Harga'
+Range=[0 8]
+NumMFs=2
+MF1='Standar':'trimf',[0 0 4]
+MF2='Mahal':'trimf',[4 8 8]
+
+[Output2]
+Name='Garansi'
+Range=[0 20]
+NumMFs=3
+MF1='Hilang':'trimf',[0 3 7]
+MF2='Berkurang':'trimf',[7 10 14]
+MF3='Tetap':'trimf',[14 18 20]
+
+[Output3]
+Name='Servis'
+Range=[0 10]
+NumMFs=3
+MF1='Lama':'trimf',[0 1.5 2]
+MF2='Standar':'trimf',[2 5 7]
+MF3='Cepat':'trimf',[7 8.5 10]
+
+[Rules]
+1 1 1, 0 1 0 (1) : 1
+1 2 2, 1 1 1 (1) : 1
+2 2 3, 1 2 2 (1) : 1
+2 3 3, 1 3 3 (1) : 1
+3 3 3, 2 3 3 (1) : 1
